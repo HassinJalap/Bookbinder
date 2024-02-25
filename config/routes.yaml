@@ -1,0 +1,38 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+
+#register:
+#    path: /register
+#    controller: App\Controller\RegistrationController::register
+#
+#app_login:
+#    path: /login
+#    controller: App\Controller\LoginController::index
+#
+#app_book:
+#    path: /books
+#    controller:  App\Controller\BookController::index
+
+default_path:
+    path: /
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\HomeController::index
+
+app_logout:
+    path: /logout
+    methods: GET
+
+
+book_profile:
+    path: /book_profile/{title}/{isbn}
+    controller: App\Controller\BookprofileController::bookProfile
+    methods: GET
+
+user_profile:
+    path: /profile/
+    controller: App\Controller\HomeController::getProfile
+    methods: GET

@@ -1,0 +1,83 @@
+/*colors used: https://www.schemecolor.com/green-ocean.php*/
+
+header, footer {
+    text-align: center;
+}
+
+h1{
+    font-size: 35px;
+}
+
+section {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(173, 216, 230, 0.8); /* Light blue with 0.8 opacity */
+}
+
+body {
+    background-image: url('../images/login_register.png');
+    width: 450px;
+    margin: auto;
+    padding: 20px;
+    color:black;
+    font-family: 'Playfair', serif;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+label {
+    color: black;
+}
+
+button {
+    background-color: steelblue;
+    color:black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+footer {
+    margin-top: 10px;
+    background-color: rgba(173, 216, 230, 0.8); /* Light blue with 0.8 opacity */
+    border: #ADD8E6 solid 2px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+input[type="date"]{
+    background-color: #ADD8E6;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ADD8E6;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}

@@ -1,0 +1,182 @@
+.tab {
+    overflow: hidden;
+}
+.profile-row {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    border: 2px solid #cccccc;
+    border-radius: 20px;
+    align-items: center;
+}
+
+
+.check-profile{
+    color: black;
+    text-decoration: none;
+}
+
+.profile-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+div.ProfileBox {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the circular shape */
+}
+
+.send-request-btn {
+    background-color: #87CEFA;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px; /* Round corners */
+    margin-left: 10px;
+    cursor: pointer;
+    opacity: 0.8; /* Transparency */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    width: 33.3333333333333%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid #cccccc;
+    border-bottom: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    float: left;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #c6ffea;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #c6ffea;
+}
+
+/* Style the tab content */
+.tabcontent {
+    padding: 6px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    height: 600px;
+}
+
+.profileGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+#profile_picture {
+    padding: 10px;
+    border-radius: 20px;
+    width: 160px;
+}
+
+.cancel {
+    background-color: indianred;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.date {
+    text-align: right;
+}
+
+.accept {
+    background-color: seagreen;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.request {
+    background-color: seagreen;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.date {
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.newMeetupButton {
+    position: sticky;
+    top: 10px;
+    left: 100%;
+    display: block;
+    padding: 10px;
+    background-color: #3e88ff;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.newMeetupButton:hover {
+    background-color: skyblue;
+}
+
+a {
+    text-decoration: none;
+}
+
+.profile-picture {
+    padding: 10px;
+    border-radius: 20px;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}BookBinder_Profile{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/user_profile.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+{#    <script src="{{ asset('js/home.js') }}"></script>#}
+{#    <script src="{{ asset('js/userprofile.js') }}"></script>#}
+{% endblock %}
+
+
+{% block main %}
+
+
+    <section id="upper_main">
+        <div class="picture">
+            {% if profilePictureFilename %}
+                <img src="{{ asset('uploads/profilepics/' ~ profilePictureFilename) }}" alt="Profile Picture" class="profile-picture">
+            {% else %}
+                <img src="{{ asset('images/profile.png') }}" alt="Profile Picture" class="profile-picture">
+            {% endif %}
+            <h1 class="user-name">{{ firstname ~ " " ~ lastname }}</h1>
+
+        </div>
+
+        <div class="profile-details">
+            <div class="personal-info">
+                <h1 class="user-name">{{ firstname ~ " " ~ lastname }}</h1>
+                <p class="info-label">Email:</p>
+                <p class="info-value">{{ email }}</p>
+                <p class="info-label">Address:</p>
+                <p class="info-value">{{ address }}</p>
+                <p class="info-label">Birthday:</p>
+                <p class="info-value">{{ birthday }}</p>
+            </div>
+            <div class="Description">
+                <h1 id="description">Description:</h1>
+                    {% if description %}
+                <p> {{ description }} </p>
+                    {% else %}
+                <p>-</p>
+                    {% endif %}
+            </div>
+        </div>
+
+    </section>
+
+
+    <div class="section-heading">
+        <h2>Your favorite Books</h2>
+        <div class="divider"></div>
+    </div>
+
+    <div id="output">
+        <div class="data-user-liked-books">
+            <ul class="liked-books-list"><b>Liked books:</b>
+                {% for book in favoriteBook %}
+                    <li>
+                        <a href="{{ path('book_profile', {'title': book.getTitle(), 'isbn': book.getISBN()}) }}">{{ book.getTitle() }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

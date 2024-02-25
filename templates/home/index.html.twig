@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BookBinder_Home{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="{{ asset('js/home.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+
+
+    <section id="upper_main">
+        <h2 id="catchphrase">Find Books and Book Lovers!!</h2>
+
+        <img id="top_image" src="{{ asset('images/top_image.png') }}" alt="Top Image">
+
+        <div class="search-wrapper">
+            <input id="input" class="search" placeholder="Title, author, keyword or ISBN" type="text" >
+            <button id="search-button" onclick="getBooks()">Search</button>
+        </div>
+        <h1 id="home-output-heading">Check out some of the trending books from this week!</h1>
+        <div id="output">
+
+        </div>
+
+    </section>
+
+{% endblock %}

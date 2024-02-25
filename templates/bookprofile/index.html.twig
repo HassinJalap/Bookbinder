@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bookprofile{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bookprofile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="{{ asset('js/home.js') }}"></script>
+    <script src="{{ asset('js/bookprofile.js') }}"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var isbn = "{{ isbn }}"; // Pass the `isbn` variable from Twig to JavaScript
+            initializeBookProfile(isbn); // Call a function defined in the separate JavaScript file
+        });
+    </script>
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+    <section class="Book">
+
+        <div>
+            <img id="book_img" alt="Book cover">
+            <button id="favorite_button" onclick="handleFavorite('{{ isbn }}', '{{ title }}', this)">Favorite!!</button>
+        </div>
+
+
+        <div class="Information">
+            <h2 id="book_title"></h2>
+            <h3 id="author"></h3>
+
+            <h4>Genres</h4>
+            <div class="Genres">
+                <p id="genres">Young Adult, Fiction</p>
+            </div>
+
+            <div class="Description">
+                <h4>Description</h4>
+                <p id="description"></p>
+            </div>
+
+
+            <div class="Details">
+                <div class="row">
+                    <div class="Specifications">
+                        <h5>ISBN</h5>
+                        <p id="isbn">{{ isbn }}</p>
+                    </div>
+                    <div class="Specifications">
+                        <h5>Print length</h5>
+                        <p id="pages"></p>
+                    </div>
+                    <div class="Specifications">
+                        <h5>Publication date</h5>
+                        <p id="publication_date"></p>
+                    </div>
+                    <div class="Specifications">
+                        <h5>Language</h5>
+                        <p id="language"></p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <a href="/peoplelist/{{ isbn }}"><button type="button" style="font-size: 15px"> <i class='fas fa-user-alt'></i> <b> People who liked this book</b>  </button></a>
+{#            <a href="/people-like/{{ isbn }}"><button type="button" style="font-size: 15px"> <i class='fas fa-user-alt'></i> <b> People who liked this book</b>  </button></a>#}
+
+
+            </div>
+        </div>
+
+        <i style="font-size: 50px" onclick="likeDislike(this)" class="far fa-heart"></i>
+
+
+    </section>
+
+
+
+
+{% endblock %}

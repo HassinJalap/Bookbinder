@@ -1,0 +1,263 @@
+#logo {
+    margin-top: -4px;
+    margin-right: 20px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 255), rgba(255, 255, 255, 255)), url('public/images/login_register.png');
+    background-position: center top;
+    background-repeat: repeat;
+    background-size: 100% auto, cover;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    color: black;
+    z-index: -1;
+}
+
+#upper_main {
+    position: relative;
+}
+
+#top_image {
+    width: 100%; /* Set the width to match the parent container */
+}
+
+#catchphrase {
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 70px;
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the text is displayed above the image */
+    font-family: 'Playfair', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+}
+
+header {
+    margin-top: 3%;
+    color: black;
+    padding: 20px;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000; /* Add a 1px solid black line at the bottom */
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+#profile_icon {
+    margin-top: auto;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: antiquewhite;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+#title {
+    margin-top: 10px;
+}
+
+#subtitle {
+    margin-top: -30px;
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.element {
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    color: black;
+}
+
+.menu {
+    font-size: 15px;
+}
+
+section {
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.books-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.25rem;
+}
+
+#output{
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
+}
+
+.grid-container {
+    margin-top: 50px;
+    margin-left: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+}
+
+.book-image {
+    width: 150px;
+    height: 100%;
+    border: 2px solid gray;
+    background-color: darkgray;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.7);
+}
+
+.book-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.book-info {
+    margin-top: 10px;
+    width: 200%;
+    justify-content: center;
+}
+
+.book-info a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.hide {
+    display: none;
+}
+
+.search {
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+}
+
+#search-button {
+    height: 40px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.book a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 30px 20px;
+    color: white;
+    box-shadow: none;
+    background-color: #ADD8E6;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profile_img {
+    width: 50px;
+    border-radius: 10px;
+}
+
+
+
+.book {
+    width: 150px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.book img {
+    width: 100%;
+}

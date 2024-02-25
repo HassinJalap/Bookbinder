@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head> {% block head %}
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Book Binder" />
+        <title>{% block title %}Book Binder{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/home.js') }}"></script>
+        {% endblock %}
+    {% endblock %}</head>
+    <body>{% block body %}
+
+    <header class="flex-container">
+        <a href="{{ path('app_home') }}">
+            <div id="logo">
+                <img src="{{ asset('images/logo.jpg') }}" width = "80" alt="db layout"/>
+            </div>
+        </a>
+        <a href="{{ path('app_home') }}">
+            <div>
+                <h1 id="title">Book Binder</h1>
+                <h2 id="subtitle">Meet book lovers</h2>
+            </div>
+        </a>
+
+
+
+        <nav>
+            <ul style="list-style-type:none" id="hypertext" class="flex-container">
+                <li class="element"><a href="{{ path('app_home') }}">Home</a></li>
+                <li class="element"><a href="{{ path('app_meetups') }}">Meetups</a></li>
+                <li class="element"><a href="{{ path('app_libraries') }}">Libraries</a></li>
+                <li class="element" id="profile_icon">
+                    <a href="#">
+                        <img id="profile_img" onclick="toggleMenu()" class="dropbtn" src="{{ asset('images/profile_icon.png') }}" alt="db layout">
+                    </a>
+                    <div class="dropdown">
+                        <div id="myDropdown" class="dropdown-content">
+                            <a class="menu" href="{{ path('app_user_profile') }}">Profile</a>
+                            <a class="menu" href="{{ path('app_logout') }}">Log out</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+        <main>
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <img src="{{ asset('images/logo.jpg') }}" width = "60" alt="db layout" style="border-radius: 10px"/>
+
+                <p>Copyright &copy; 2022 BookBinder.
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+                </p>
+            </div>
+        </footer>
+    {% endblock %}</body>
+</html>

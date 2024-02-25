@@ -1,0 +1,109 @@
+{% extends 'home/index.html.twig' %}
+
+{% block title %}Bookprofile{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/peoplelist.css') }}">
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/home.js') }}"></script>
+    <script src="{{ asset('js/people_list.js') }}"></script>
+{% endblock %}
+
+
+{% block main %}
+
+    <section class="Book">
+        <div class="profile-book-img">
+            <img id="book_img" alt="Book cover">
+        </div>
+
+        <div class="Information">
+            <h2 id="book_title"></h2>
+            <h3 id="author"></h3>
+
+            <h4>Genres</h4>
+            <div class="Genres">
+                <p id="genres">Young Adult, Fiction</p>
+            </div>
+
+            <div class="Details">
+                <div class="row">
+                    <div class="Specifications">
+                        <h5>ISBN</h5>
+                        <p id="isbn">{{ isbn }}</p>
+                    </div>
+                    <div class="Specifications">
+                        <h5>Print length</h5>
+                        <p id="pages"></p>
+                    </div>
+                    <div class="Specifications">
+                        <h5>Publication date</h5>
+                        <p id="publication_date"></p>
+                    </div>
+                    <div class="Specifications">
+                        <h5>Language</h5>
+                        <p id="language"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="LikedBy">
+        <h1>People who also liked this book</h1>
+        <div class="people-liked-container">
+            <div class="person-card-row">
+                {% for person in users %}
+                <div class="person-card">
+                    <!-- User profile picture -->
+                    <div class="user-profile-pic">
+                        {% if person.getProfilepicFilename() %}
+                            <img src="{{ asset('uploads/profilepics/' ~ person.getProfilepicFilename() ) }}" alt="Profile Picture" class="profile-picture">
+                        {% else %}
+                            <img src="{{ asset('images/profile.png') }}" alt="Profile Picture" class="profile-picture">
+                        {% endif %}
+                    </div>
+                    <!-- User info -->
+                    <div class="user-info">
+                        <!-- User name -->
+                        <div class="data-user-name">
+                            <h3>{{ person.getFirstname ~ " " ~ person.getLastname }}</h3>
+                        </div>
+                        <!-- User age -->
+                        <div class="data-user-age">
+                            <p><b>Age: </b>25</p>
+                        </div>
+                        <!-- User city -->
+                        <div class="data-user-city">
+                            <p><b>City: </b>Leuven</p>
+                        </div>
+                        <!-- User interests -->
+                        <div class="data-user-interests">
+                            <p><b>Interests: </b>Football, tennis, hockey</p>
+                        </div>
+                        <!-- User liked books -->
+                        <div class="data-user-liked-books">
+                            <ul class="liked-books-list"><b>Liked books:</b>
+                                {% for book in person.getFavoriteBooks() %}
+                                    <li>
+                                        <a href="{{ path('book_profile', {'title': book.getTitle(), 'isbn': book.getISBN()}) }}">{{ book.getTitle() }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% if loop.index is divisible by(2) or loop.last %}
+            </div>
+            <div class="person-card-row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
